@@ -1,3 +1,10 @@
+
+<?php include "koneksi.php"; 
+
+$query = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP BY id DESC");
+
+?>
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,47 +21,34 @@
         <div class="logo"><a href="">Accelleron</a></div>
         <div class="menu">
             <a class="activate" href="">Our Product</a>
+
             <a href="">News</a>
+
         </div>
     </div>
     <div class="for">
         <section>
             <div class="scroll">
-                <a href="create.html">Create New</a>
+
+                <a href="create.php">Create New</a>
                 <div class="gridco">
+                    <?php 
+                    $no = 1;
+
+                    while($data = mysqli_fetch_array($query)) :
+                    ?>
                     <div class="box">
                         <div class="lifo">
-                            <h2>Huracan Tecnica</h2>
-                            <h6>Most people in Florida buy HURACAN</h6>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
+                            <h2><?=$data['judul']?></h2>
+                            <h6><?=$data['deskripsi']?></h6>
+                            <a href="edit_product.php?id=<?=$data['id'] ?>">Edit</a>
+                            <a href="hapus_product.php?id=<?=$data['id'] ?>" onclick="return confirm('apakah anda yakin ingin menghapus data ini?')">Delete</a>
                         </div>
                         <div class="libo">
-                            <img src="assets/img/Product/image 1.png" alt="">
+                            <img src="img/<?=$data['img']?>" alt="">
                         </div>
                     </div>
-                    <div class="box">
-                        <div class="lifo">
-                            <h2>Huracan Tecnica</h2>
-                            <h6>Most people in Florida buy HURACAN lorem</h6>
-                            <a href="">Edit</a>
-                            <a href="">Delete</a>
-                        </div>
-                        <div class="libo">
-                            <img src="assets/img/Product/image 1.png" alt="">
-                        </div>
-                    </div>                    
-                <div class="box">
-                    <div class="lifo">
-                        <h2>Huracan Tecnica</h2>
-                        <h6>Most people in Florida buy HURACAN</h6>
-                        <a href="">Edit</a>
-                        <a href="">Delete</a>
-                    </div>
-                    <div class="libo">
-                        <img src="assets/img/Product/image 1.png" alt="">
-                    </div>
-                </div>
+                    <?php $no++; endwhile ?>
                 </div>
             </div>
         </section>
