@@ -1,4 +1,7 @@
 $primary: #181818;
+body{
+    overflow-x: hidden;
+}
 *{
     padding: 0;
     margin: 0;
@@ -158,9 +161,6 @@ input[type="submit"]{
     }
 }
 // index html
-body{
-    overflow-x: hidden;
-}
 nav{
     position: sticky;
     top: 0;
@@ -479,4 +479,58 @@ main{
     .logo{
         justify-content: flex-start;
     }
+}
+.dp{
+    a{
+        float: left;
+        color: #E2A03D;
+        border: 1px solid white;
+        padding: 1vh 3vh;
+        font-size: 11px;
+    }
+    a:nth-child(2){
+        border-radius: 10px;
+    }
+    .con{
+        margin: 150px 30px;
+        .txt{
+            background-color: white;
+            width: fit-content;
+            padding: 1vh 2vh;
+            border-radius: 5px;
+        }
+        .div{
+            margin: 20px 70px;
+            max-width: 600px;
+            color: white;
+            h6{
+                border-bottom: white solid 1px;
+                margin-bottom: 20px;
+                padding-bottom: 20px;
+                max-width: 160vh;
+            }
+            h2{
+                font-weight: lighter;
+                font-size: 40px;
+            }
+            .fleri{
+                @include flexbox();
+                max-width: 440px;
+                margin: 100px 0;
+            }
+            h3{
+                font-weight: lighter;
+            }
+            span{
+                color: #E2A03D;
+            }
+        }
+    }
+}
+.ri img{
+    width: 180vh;
+    height: 90vh;
+    position: absolute;
+    top: 5vh;
+    right: -48vh;
 }

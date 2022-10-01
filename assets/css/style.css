@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -175,10 +179,6 @@ input[type=submit] {
   font-size: 15px;
   position: relative;
   top: 10px;
-}
-
-body {
-  overflow-x: hidden;
 }
 
 nav {
@@ -511,4 +511,60 @@ main .boxevent:nth-child(4) {
 }
 .wrf .logo {
   justify-content: flex-start;
+}
+
+.dp a {
+  float: left;
+  color: #E2A03D;
+  border: 1px solid white;
+  padding: 1vh 3vh;
+  font-size: 11px;
+}
+.dp a:nth-child(2) {
+  border-radius: 10px;
+}
+.dp .con {
+  margin: 150px 30px;
+}
+.dp .con .txt {
+  background-color: white;
+  width: fit-content;
+  padding: 1vh 2vh;
+  border-radius: 5px;
+}
+.dp .con .div {
+  margin: 20px 70px;
+  max-width: 600px;
+  color: white;
+}
+.dp .con .div h6 {
+  border-bottom: white solid 1px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  max-width: 160vh;
+}
+.dp .con .div h2 {
+  font-weight: lighter;
+  font-size: 40px;
+}
+.dp .con .div .fleri {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 440px;
+  margin: 100px 0;
+}
+.dp .con .div h3 {
+  font-weight: lighter;
+}
+.dp .con .div span {
+  color: #E2A03D;
+}
+
+.ri img {
+  width: 180vh;
+  height: 90vh;
+  position: absolute;
+  top: 5vh;
+  right: -48vh;
 }/*# sourceMappingURL=style.css.map */
