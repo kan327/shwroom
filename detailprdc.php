@@ -25,6 +25,7 @@ if(mysqli_num_rows($query)<1){
     <main class="dp">
         <a href="index.php"><- Back</a>
         <div class="con">
+
             <img class="txt" src="img/<?=$data['lgo_img']?>" alt="">
             <div class="div">
                 <h6><?=$data['deskripsi']?></h6>
@@ -53,6 +54,7 @@ if(mysqli_num_rows($query)<1){
     </main>
     <div class="ri">
         <img src="img/<?=$data['img']?>" alt="">
+
     </div>
 </body>
 </html>

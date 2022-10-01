@@ -1,3 +1,4 @@
+
 <?php include "koneksi.php"; 
 
 $query = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP BY id DESC");
@@ -20,12 +21,15 @@ $query = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP
         <div class="logo"><a href="">Accelleron</a></div>
         <div class="menu">
             <a class="activate" href="">Our Product</a>
-            <a href="">Event</a>
+
+            <a href="">News</a>
+
         </div>
     </div>
     <div class="for">
         <section>
             <div class="scroll">
+
                 <a href="create.php">Create New</a>
                 <div class="gridco">
                     <?php 

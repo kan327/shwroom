@@ -26,6 +26,7 @@
                     <label class="file" for="carimg">
                         Image
                         <input type="file" name="img">
+
                     </label>
                 <div class="co">
                     <input type="text" placeholder="$XXX.XX" name="harga" id="">  

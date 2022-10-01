@@ -23,11 +23,14 @@ body {
 }
 
 .sidebar {
-  position: absolutex;
-  left: 0;
+  position: sticky;
+  z-index: 10000;
+  top: 0;
   background-color: #181818;
   width: min-content;
-  min-height: 100vh;
+  height: 150vh;
+  bottom: 0;
+  left: 0;
   box-shadow: -20px 20px 50px rgba(0, 0, 0, 0.5);
   display: flex;
   flex-direction: column;
@@ -95,7 +98,7 @@ body {
   padding: 0.5vh 1vh;
   font-size: 20px;
   margin: 30px 0px;
-  max-width: 31vh;
+  width: fit-content;
 }
 .file input {
   font-size: 15px;
@@ -179,6 +182,17 @@ input[type=submit] {
   font-size: 15px;
   position: relative;
   top: 10px;
+}
+
+.container {
+  overflow-x: auto;
+}
+
+.min .layout, .min .layout2, .min .layout3, .min .layout4 {
+  background-color: transparent;
+}
+.min .layout a, .min .layout2 a, .min .layout3 a, .min .layout4 a {
+  margin-right: 20px;
 }
 
 nav {
