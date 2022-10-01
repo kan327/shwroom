@@ -45,7 +45,7 @@ if(mysqli_num_rows($tampil)<1){
                         Sebelumnya : <?= $data['img']?>
                     </label>
                 <div class="co">
-                    <input type="text" placeholder="$XXX.XX" name="harga" value="<?= $data['harga']?>" id="">  
+                    <input type="text" placeholder="$XXX.XX" name="harga" value="$ <?= $data['harga']?>" id="">  
                     <input type="text" placeholder="Title..." name="judul"  value="<?= $data['judul']?>">                  
                     <textarea placeholder="input here..." name="deskripsi" id=""><?= $data['deskripsi']?></textarea>
                 </div>
