@@ -21,18 +21,19 @@
                 <div class="cont">
                     <label class="file" for="logo">
                         Logo Image
-                        <input type="file" name="logo" id="">
+                        <input type="file" name="lgo_img" id="">
                     </label>
                     <label class="file" for="carimg">
                         Image
-                        <input type="file">
+                        <input type="file" name="img">
                     </label>
                 <div class="co">
-                    <input type="text" placeholder="$XXX.XX" name="" id="">  
-                    <input type="text" placeholder="Title...">                  
-                    <textarea placeholder="input here..." name="" id=""></textarea>
+                    <input type="text" placeholder="$XXX.XX" name="harga" id="">  
+                    <input type="text" placeholder="Title..." name="judul">                  
+                    <textarea placeholder="input here..." name="deskripsi" id=""></textarea>
                 </div>
-                <input type="submit">
+                <!-- button -->
+                <input type="submit" name="kirim">
                 <div class="fle">
                     <div class="infle">
                         <label for="power">Power</label>
@@ -44,20 +45,48 @@
                     <div class="infle">
                         <label for="power">Top Speed</label>
                         <span>
-                            <input type="text" placeholder="XXX" name="power" id="">
+                            <input type="text" placeholder="XXX" name="top_speed" id="">
                             <label for="power">Mph</label>                       
                         </span>
                     </div>
                     <div class="infle">
                         <label for="power">Max Torque</label>
                         <span>
-                            <input type="text" placeholder="XXX" name="power" id="">
+                            <input type="text" placeholder="XXX" name="torquee" id="">
                             <label for="power">lb-ft</label>                       
                         </span>
                     </div>
                 </div>                  
                 </div>
             </form>
+
+            <?php 
+            if(isset($_POST['kirim'])){
+                $judul = $_POST['judul'];
+                $lgo_img = $_FILES['lgo_img']['name'];
+                $img = $_FILES['img']['name'];
+                $harga = $_POST['harga'];
+                $power = $_POST['power'];
+                $top_speed = $_POST['top_speed'];
+                $torquee = $_POST['torque'];
+                $deskripsi = $_POST['deskripsi'];
+
+                $lgo_tmp = $_FILES['lgo_img']['tmp_name'];
+                $img_tmp = $_FILES['img']['tmp_name'];
+
+                move_uploaded_file($lgo_tmp, "img/$lgo_img");
+                move_uploaded_file($img_tmp, "img/$img");
+
+                $query = mysqli_query($koneksi, " INSERT INTO product VALUES('', '$judul', '$lgo_img', '$img', '$harga', '$power', '$top_speed', '$torquee', '$deskripsi', 'up')");
+
+                if($query){
+                    header("Location: admin-product.php");
+                }else{
+                    header("Location: create.php?status='gagal'");
+                }
+            }
+            ?>
+
         </div>   
     </div>
 </body>
