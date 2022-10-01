@@ -3,7 +3,7 @@
 $query = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP BY id DESC");
 
 ?>
-
+  
 <!DOCTYPE html>
 <html lang="en">
 <head>
