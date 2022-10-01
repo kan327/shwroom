@@ -1,6 +1,6 @@
 <?php include "koneksi.php"; 
 
-$query = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP BY id DESC LIMIT 3");
+$query = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP BY id DESC LIMIT 2 ");
 
 // var_dump($query);
 // die;
@@ -91,64 +91,8 @@ $query = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP
             </div>
         </div>
     </main>
+    
     <br><br><br><br><br><br>
-    <main class="layout3">
-        <div class="boxevent">
-            <img src="assets/img/News/image 17.png" alt="">
-            <div class="tex">
-                <h2>Huracan</h2>
-                <h6>Lamborghini Urus is the first Super Sport Utility Vehicle in the world. </h6>
-                <a href="">More</a>
-            </div>
-        </div>
-        <div class="boxevent">
-            <img src="assets/img/News/image 17.png" alt="">
-            <div class="tex">
-                <h2>Huracan</h2>
-                <h6>Lamborghini Urus is the first Super Sport Utility Vehicle in the world. </h6>
-                <a href="">More</a>
-            </div>
-        </div>
-        <div class="boxevent">
-            <img src="assets/img/News/image 17.png" alt="">
-            <div class="tex">
-                <h2>Huracan</h2>
-                <h6>Lamborghini Urus is the first Super Sport Utility Vehicle in the world. </h6>
-                <a href="">More</a>
-            </div>
-        </div>
-    </main>
-    <br><br><br><br><br><br>
-    <main class="layout2">
-        <div class="boxevent">
-            <img src="assets/img/News/image 17.png" alt="">
-            <div class="tex">
-                <h2>Huracan</h2>
-                <h6>Lamborghini Urus is the first Super Sport Utility Vehicle in the world. </h6>
-                <a href="">More</a>
-            </div>
-        </div>
-        <div class="boxevent">
-            <img src="assets/img/News/image 17.png" alt="">
-            <div class="tex">
-                <h2>Huracan</h2>
-                <h6>Lamborghini Urus is the first Super Sport Utility Vehicle in the world. </h6>
-                <a href="">More</a>
-            </div>
-        </div>
-    </main>
-    <br><br><br><br><br><br>
-    <main class="layout">
-        <div class="boxevent">
-            <img src="assets/img/News/image 17.png" alt="">
-            <div class="tex">
-                <h2>Huracan</h2>
-                <h6>Lamborghini Urus is the first Super Sport Utility Vehicle in the world. </h6>
-                <a href="">More</a>
-            </div>
-        </div>
-    </main>
-    <br><br><br><br><br><br><br><br>
     <section>
         <div class="scroll">
             <?php 
@@ -162,7 +106,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP
                 <div class="lifo">
                     <h2><?=$tampil['judul']?></h2>
                     <h6>Most people in Florida buy <?=$tampil['judul']?></h6>
-                    <a href="">Learn More</a>
+                    <a href="detailprdc.php?id=<?=$tampil['id']?>">Learn More</a>
                 </div>
                 <div class="libo">
                     <img src="img/<?=$tampil['img']?>" alt="">
