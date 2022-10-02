@@ -13,7 +13,9 @@ $query = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="assets/CSS/style.css">
+    <style>
+        <?php include 'assets/CSS/Style.css'?>
+    </style>
 </head>
 <body>
     <nav>
@@ -45,6 +47,13 @@ $query = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP
             <div class="sidetxt">
                 <img class="txt" src="img/<?=$data['lgo_img']?>" alt="">
                 <h6><?=$data['deskripsi']?></h5>
+                <?php if($no % 2) :?>
+                    <h1 id="iii">
+                <?php else :?>
+                    <h1 id="eee">
+                <?php endif; ?>
+                    <?=$data['judul'] ?>
+                </h1>
             </div>
             <img class="hero" src="img/<?=$data['img']?>" alt="">
             </div>
@@ -57,39 +66,30 @@ $query = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP
             <h3>Update Info</h2>
         </div>
     </div>
+    <?php 
+    $da = cek("SELECT * FROM `info` WHERE status='up'  ORDER BY id DESC LIMIT 4");
+    $test = count($da);
+    if($test == 4):?> 
     <main class="layout4">
+    <?php elseif($test == 3):?>
+    <main class="layout3">
+    <?php elseif($test == 2):?>
+    <main class="layout2">
+    <?php elseif($test == 1):?>
+    <main class="layout">
+    <?php endif;
+    $row = mysqli_query($koneksi, "SELECT * FROM `info` WHERE status='up'  ORDER BY id DESC LIMIT 4");
+    while($all = mysqli_fetch_array($row)) :
+    ?>
         <div class="boxevent">
-            <img src="assets/img/News/Rectangle 44.png" alt="">
+            <img src="img/<?=$all['img']?>" alt="">
             <div class="tex">
-                <h2>HURACAN</h2>
-                <h6>An Astonishing World Record Time</h6>
+                <h2><?=$all['judul']?></h2>
+                <h6><?=$all['deskripsi']?></h6>
                 <a href="">More</a>
             </div>
         </div>
-        <div class="boxevent">
-            <img src="assets/img/News/urus.png" alt="">
-            <div class="tex">
-                <h2>URUS</h2>
-                <h6>Lamborghini Urus is the first Super Sport Utility Vehicle in the world. </h6>
-                <a href="">More</a>
-            </div>
-        </div>
-        <div class="boxevent">
-            <img src="assets/img/News/image 16.png" alt="">
-            <div class="tex">
-                <h2>Huracan</h2>
-                <h6>Lamborghini Urus is the first Super Sport Utility Vehicle in the world. </h6>
-                <a href="">More</a>
-            </div>
-        </div>
-        <div class="boxevent">
-            <img src="assets/img/News/image 17.png" alt="">
-            <div class="tex">
-                <h2>Huracan</h2>
-                <h6>Lamborghini Urus is the first Super Sport Utility Vehicle in the world. </h6>
-                <a href="">More</a>
-            </div>
-        </div>
+    <?php endwhile;?>
     </main>
     
     <br><br><br><br><br><br>
@@ -137,4 +137,7 @@ $query = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP
         </div>
     </footer>
 </body>
+<script>
+    <?php include "assets/JS/main.js"?>
+</script>
 </html>

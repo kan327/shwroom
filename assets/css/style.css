@@ -2,6 +2,50 @@ body {
   overflow-x: hidden;
 }
 
+.diam {
+  overflow: hidden;
+}
+
+@keyframes left {
+  0% {
+    margin-left: -400px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+@keyframes leftprd {
+  0% {
+    margin-left: -400px;
+  }
+  100% {
+    margin-left: 30px;
+  }
+}
+@keyframes right {
+  0% {
+    margin-right: -400px;
+  }
+  100% {
+    margin-right: 0px;
+  }
+}
+@keyframes top {
+  0% {
+    margin-top: -400px;
+  }
+  100% {
+    margin-top: 0px;
+  }
+}
+@keyframes bottom {
+  0% {
+    margin-bottom: -400px;
+  }
+  100% {
+    margin-bottom: 0px;
+  }
+}
 * {
   padding: 0;
   margin: 0;
@@ -13,13 +57,72 @@ body {
 }
 
 ::-webkit-scrollbar {
-  background-color: white;
+  background-color: #fff;
   width: 5px;
   height: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
   background: #181818;
+}
+
+.login {
+  background-image: url(assets/img/image4.png);
+  background-size: cover;
+}
+
+.card {
+  margin: 100px 400px;
+  padding: 50px;
+  color: #fff;
+  border-radius: 10px;
+}
+.card a {
+  border-radius: 10px;
+  padding: 5px 20px;
+  background-color: #fff;
+}
+.card .logo {
+  justify-content: flex-start;
+}
+.card h2 {
+  display: inline-block;
+  font-weight: normal;
+}
+.card .r {
+  display: flex;
+  margin-bottom: 3vh;
+}
+.card .log {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card input[type=email], .card input[type=password] {
+  border-radius: 10px;
+  padding: 2px;
+}
+.card .inputgrp {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card input[type=submit] {
+  margin: 0;
+  width: 141px;
+  padding: 5px;
+  background-color: #E2A03D;
+  color: #fff;
+  border-radius: 10px;
+}
+.card input::placeholder {
+  background-color: #fff;
+  color: #7D7D7D;
+}
+.card .btn {
+  display: flex;
+  justify-content: flex-end;
 }
 
 .sidebar {
@@ -42,10 +145,10 @@ body {
   padding: 10px;
 }
 .sidebar .logo a {
-  color: white;
+  color: #fff;
 }
 .sidebar .menu a.activate {
-  background-color: #E2A03D;
+  border-left: #E2A03D solid 3px;
 }
 .sidebar .menu {
   display: flex;
@@ -53,8 +156,8 @@ body {
   justify-content: space-between;
 }
 .sidebar .menu a {
-  margin: 10px 5px 10px 25px;
-  color: white;
+  padding: 10px 5px 10px 25px;
+  color: #fff;
 }
 
 .container {
@@ -64,14 +167,14 @@ body {
 
 .for {
   position: relative;
-  background-color: grey;
+  background-color: #7D7D7D;
   padding: 50px;
   width: 100%;
 }
 .for a {
   float: left;
-  color: white;
-  border: 1px solid white;
+  color: #fff;
+  border: 1px solid #fff;
   padding: 0.5vh 1vh;
   font-size: 12px;
   margin: 30px 3px;
@@ -87,14 +190,19 @@ body {
   flex-direction: column;
   justify-content: space-between;
 }
+.for section .scroll a:hover {
+  background-color: #fff;
+  color: #181818;
+  border-color: #181818;
+}
 .for .box {
   margin: 2vh 5vh;
 }
 
 .file {
   float: left;
-  color: white;
-  border: 1px solid white;
+  color: #fff;
+  border: 1px solid #fff;
   padding: 0.5vh 1vh;
   font-size: 20px;
   margin: 30px 0px;
@@ -107,8 +215,8 @@ body {
 
 input[type=text], ::placeholder {
   border: none;
-  background-color: grey;
-  color: white;
+  background-color: #7D7D7D;
+  color: #fff;
   outline: none;
   cursor: pointer;
 }
@@ -125,8 +233,6 @@ input[type=submit] {
 
 .co {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   padding: 20px;
   max-width: 200vh;
 }
@@ -134,20 +240,21 @@ input[type=submit] {
   display: inline-block;
   justify-content: center;
   align-items: center;
-  margin-right: 20%;
+  margin-right: 11%;
+  min-width: 200px;
 }
-.co input[type=text]:nth-child(1), .co input[type=text]:nth-child(2) {
+.co input[type=text]:nth-child(1) {
   width: 100px;
 }
 .co textarea {
   width: 400px;
   height: 150px;
-  background-color: grey;
+  background-color: #7D7D7D;
   cursor: pointer;
   border: none;
   outline: none;
-  border-bottom: white 2px solid;
-  color: white;
+  border-bottom: #fff 2px solid;
+  color: #fff;
   font-size: 20px;
 }
 
@@ -163,7 +270,7 @@ input[type=submit] {
   justify-content: space-between;
   max-width: 60vh;
   font-size: 20px;
-  color: white;
+  color: #fff;
 }
 .fle .infle {
   display: flex;
@@ -188,11 +295,69 @@ input[type=submit] {
   overflow-x: auto;
 }
 
+.min {
+  background-color: #7D7D7D;
+  padding: 20px;
+}
+.min a {
+  margin: 50px;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 0.5vh 3vh;
+}
+.min a:hover {
+  background-color: #fff;
+  color: #181818;
+  border-color: #181818;
+}
 .min .layout, .min .layout2, .min .layout3, .min .layout4 {
   background-color: transparent;
+  padding: 5px 50px;
 }
 .min .layout a, .min .layout2 a, .min .layout3 a, .min .layout4 a {
   margin-right: 20px;
+}
+.min .layout img, .min .layout2 img, .min .layout3 img, .min .layout4 img {
+  width: 80vh;
+  height: 100%;
+}
+.min .layout .tex, .min .layout2 .tex, .min .layout3 .tex, .min .layout4 .tex {
+  height: 100%;
+  top: -44.5vh;
+}
+.min .boxevent {
+  height: 44vh;
+  width: fit-content;
+  margin: 5px;
+}
+.min .layout3 {
+  padding: 5px 30px;
+  grid-template-rows: 52vh auto;
+}
+.min .layout3 .boxevent:nth-child(1) img {
+  width: 162vh;
+  height: 50vh;
+}
+.min .layout3 .boxevent:nth-child(1) .tex {
+  padding-top: 25vh;
+  top: -50.5vh;
+  height: 50vh;
+}
+.min .layout2, .min .layout {
+  grid-template-rows: auto auto;
+  padding: 0 30px;
+}
+.min .layout2 .boxevent:nth-child(1), .min .layout2 .boxevent:nth-child(2), .min .layout .boxevent:nth-child(1), .min .layout .boxevent:nth-child(2) {
+  height: 50vh;
+}
+.min .layout2 .boxevent:nth-child(1) img, .min .layout2 .boxevent:nth-child(2) img, .min .layout .boxevent:nth-child(1) img, .min .layout .boxevent:nth-child(2) img {
+  width: 158vh;
+  height: 50vh;
+}
+.min .layout2 .boxevent:nth-child(1) .tex, .min .layout2 .boxevent:nth-child(2) .tex, .min .layout .boxevent:nth-child(1) .tex, .min .layout .boxevent:nth-child(2) .tex {
+  padding-top: 25vh;
+  top: -50.5vh;
+  height: 50vh;
 }
 
 nav {
@@ -200,16 +365,20 @@ nav {
   top: 0;
   left: 0;
   z-index: 10000;
+  background-color: #181818;
+  padding: 1vh 10vh;
+  animation-name: top;
+  animation-duration: 2s;
 }
 nav a {
   padding: 1vh 2vh;
   margin: 0 10px;
-  color: white;
+  color: #fff;
   border-radius: 20px;
 }
 nav a:hover {
   color: #181818;
-  background-color: white;
+  background-color: #fff;
 }
 
 .logo {
@@ -221,7 +390,7 @@ nav a:hover {
 
 .logo::before {
   content: "";
-  background-image: url(../img/logo.png);
+  background-image: url(assets/img/logo.png);
   background-size: 50px;
   display: block;
   width: 50px;
@@ -232,8 +401,6 @@ nav a:hover {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #181818;
-  padding: 1vh 10vh;
 }
 .wrap .lef {
   display: flex;
@@ -262,16 +429,38 @@ h6 {
   height: 80vh;
 }
 .bigbox .txt {
-  background-color: white;
+  background-color: #fff;
   width: fit-content;
   padding: 1vh 2vh;
 }
 .bigbox h6 {
-  color: white;
+  color: #fff;
   margin: 30px 0 0 30px;
+  max-height: 8vh;
+  overflow: hidden;
 }
 .bigbox .sidetxt {
   max-width: 600px;
+}
+
+#iii {
+  position: absolute;
+  left: -400px;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: #fff 2px;
+  width: max-content;
+  font-size: 100px;
+}
+
+#eee {
+  -webkit-text-stroke: #fff 2px;
+  color: transparent;
+  position: absolute;
+  right: -1000px;
+  width: max-content;
+  font-size: 100px;
+  text-transform: uppercase;
 }
 
 .fir {
@@ -290,6 +479,8 @@ h6 {
   position: absolute;
   left: -20vh;
   top: 10vh;
+  animation-name: left;
+  animation-duration: 2s;
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
@@ -298,7 +489,7 @@ h6 {
   text-align: right;
 }
 .fir .sidetxt h6 {
-  color: white;
+  color: #fff;
   margin: 30px 30px 0 0;
 }
 
@@ -316,14 +507,16 @@ h6 {
   position: relative;
   right: -40%;
   top: -18vh;
-  z-index: 100000;
+  z-index: 100;
+  animation-name: right;
+  animation-duration: 2s;
 }
 
 .sli {
   background-color: #181818;
 }
 .sli .whi {
-  background-color: white;
+  background-color: #fff;
   margin: 0 auto;
   padding: 10px;
   width: fit-content;
@@ -333,6 +526,7 @@ h6 {
 
 .boxevent {
   width: fit-content;
+  height: 55vh;
 }
 .boxevent img {
   width: 88vh;
@@ -345,9 +539,10 @@ h6 {
   top: -52.5vh;
   bottom: 0;
   padding: 20.5vh 3vh;
-  color: white;
+  color: #fff;
   overflow: hidden;
   transition: 0.3s;
+  height: 100%;
 }
 .boxevent .tex h6 {
   margin-bottom: 10px;
@@ -357,8 +552,8 @@ h6 {
 .boxevent .tex a {
   display: none;
   float: right;
-  color: white;
-  border: 1px solid white;
+  color: #fff;
+  border: 1px solid #fff;
   padding: 0.5vh 3vh;
 }
 
@@ -369,7 +564,7 @@ h6 {
   display: inline-block;
 }
 .boxevent:hover .tex a:hover {
-  background-color: white;
+  background-color: #fff;
   color: #181818;
   border-color: #181818;
 }
@@ -382,8 +577,8 @@ main {
 .layout4 {
   display: grid;
   grid-template-areas: "box1 box3" "box2 box4";
-  grid-template-columns: 90vh 90vh;
-  grid-template-rows: 55vh 55vh;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto;
   padding: 50px;
   background-color: #181818;
 }
@@ -391,8 +586,8 @@ main {
 .layout3 {
   display: grid;
   grid-template-areas: "box1 box1" "box2 box3";
-  grid-template-columns: 90vh 90vh;
-  grid-template-rows: 82vh 55vh;
+  grid-template-columns: auto auto;
+  grid-template-rows: 83vh auto;
   padding: 50px;
   background-color: #181818;
 }
@@ -409,8 +604,8 @@ main {
 .layout2 {
   display: grid;
   grid-template-areas: "box1" "box2";
-  grid-template-columns: 90vh;
-  grid-template-rows: 82vh 82vh;
+  grid-template-columns: auto;
+  grid-template-rows: 83vh 100vh;
   padding: 50px;
   background-color: #181818;
 }
@@ -462,8 +657,8 @@ main .boxevent:nth-child(4) {
 }
 
 .box {
-  background-color: #424242;
-  color: white;
+  background-color: #5B5B5B;
+  color: #fff;
   width: fit-content;
   display: flex;
   border-radius: 10px;
@@ -480,19 +675,19 @@ main .boxevent:nth-child(4) {
 }
 .box .lifo a {
   float: left;
-  color: white;
-  border: 1px solid white;
+  color: #fff;
+  border: 1px solid #fff;
   padding: 0.5vh 1vh;
   font-size: 12px;
   margin-top: 30px;
 }
 .box .lifo a:hover {
-  background-color: white;
+  background-color: #fff;
   color: #181818;
 }
 .box .libo {
   width: 38vh;
-  background-color: grey;
+  background-color: #7D7D7D;
   border-radius: 10px;
 }
 .box .libo img {
@@ -505,10 +700,10 @@ main .boxevent:nth-child(4) {
 .wrf {
   background-color: #181818;
   padding: 20px 50px;
-  color: white;
+  color: #fff;
 }
 .wrf a {
-  color: white;
+  color: #fff;
   font-weight: lighter;
 }
 .wrf .linet {
@@ -516,7 +711,7 @@ main .boxevent:nth-child(4) {
   margin-bottom: 30px;
 }
 .wrf .linet:nth-child(3) {
-  border-bottom: white solid 1px;
+  border-bottom: #fff solid 1px;
   padding-bottom: 30px;
 }
 .wrf .linet a {
@@ -530,7 +725,7 @@ main .boxevent:nth-child(4) {
 .dp a {
   float: left;
   color: #E2A03D;
-  border: 1px solid white;
+  border: 1px solid #fff;
   padding: 1vh 3vh;
   font-size: 11px;
 }
@@ -539,9 +734,11 @@ main .boxevent:nth-child(4) {
 }
 .dp .con {
   margin: 150px 30px;
+  animation-name: leftprd;
+  animation-duration: 2s;
 }
 .dp .con .txt {
-  background-color: white;
+  background-color: #fff;
   width: fit-content;
   padding: 1vh 2vh;
   border-radius: 5px;
@@ -549,13 +746,15 @@ main .boxevent:nth-child(4) {
 .dp .con .div {
   margin: 20px 70px;
   max-width: 600px;
-  color: white;
+  color: #fff;
 }
 .dp .con .div h6 {
-  border-bottom: white solid 1px;
+  border-bottom: #fff solid 1px;
   margin-bottom: 20px;
   padding-bottom: 20px;
   max-width: 160vh;
+  max-height: 20vh;
+  overflow: auto;
 }
 .dp .con .div h2 {
   font-weight: lighter;
@@ -581,4 +780,41 @@ main .boxevent:nth-child(4) {
   position: absolute;
   top: 5vh;
   right: -48vh;
+  animation-name: right;
+  animation-duration: 2s;
+}
+
+.new {
+  height: fit-content;
+  padding: 20px;
+}
+.new a {
+  color: #E2A03D;
+  border: 1px solid #fff;
+  padding: 1vh 3vh;
+  font-size: 11px;
+  margin: 30px 0;
+}
+.new img {
+  width: 100%;
+  margin: 30px 0;
+}
+.new .div {
+  color: #fff;
+  width: 70%;
+  max-height: 50vh;
+  margin: 0 auto;
+  font-size: 20px;
+  margin-top: 50px;
+  font-weight: lighter;
+  overflow: auto;
+}
+.new .div h6 {
+  border-top: #fff 1px solid;
+  padding: 50px;
+}
+.new .div h3 {
+  width: fit-content;
+  margin: 50px auto;
+  max-width: 260px;
 }/*# sourceMappingURL=style.css.map */

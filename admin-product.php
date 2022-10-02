@@ -13,20 +13,22 @@ $query = mysqli_query($koneksi, "SELECT * FROM product WHERE status = 'up' GROUP
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        <?php include 'assets/CSS/Style.css'?>
+    </style>
 </head>
 <body>
 <div class="container">
     <div class="sidebar">
         <div class="logo"><a href="">Accelleron</a></div>
         <div class="menu">
-            <a class="activate" href="">Our Product</a>
+            <a class="activate" href="admin-product.php">Our Product</a>
 
-            <a href="">News</a>
+            <a href="admin-event.php">News</a>
 
         </div>
     </div>
-    <div class="for">
+    <div class="for diam">
         <section>
             <div class="scroll">
 

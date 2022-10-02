@@ -1,6 +1,34 @@
 $primary: #181818;
+$grey: #7D7D7D;
+$black_grey: #5B5B5B;
+$blck: #000000;
+$gold: #E2A03D;
+$white: #fff;
 body{
     overflow-x: hidden;
+}
+.diam{
+    overflow: hidden;
+}
+@keyframes left{
+    0%{margin-left: -400px}
+    100%{margin-left: 0px;}
+}
+@keyframes leftprd{
+    0%{margin-left: -400px}
+    100%{margin-left: 30px;}
+}
+@keyframes right{
+    0%{margin-right: -400px}
+    100%{margin-right: 0px;}
+}
+@keyframes top{
+    0%{margin-top: -400px}
+    100%{margin-top: 0px;}
+}
+@keyframes bottom{
+    0%{margin-bottom: -400px}
+    100%{margin-bottom: 0px;}
 }
 *{
     padding: 0;
@@ -12,7 +40,7 @@ body{
     box-sizing: border-box;
 }
 ::-webkit-scrollbar{
-    background-color: white;
+    background-color: $white;
     width: 5px;
     height: 5px;
 }
@@ -23,6 +51,60 @@ body{
     display: flex;
     flex-direction: $direction;
     justify-content: space-between;
+}
+//login
+.login{
+    background-image: url(assets/img/image4.png);
+    background-size: cover;
+}
+.card{
+    margin: 100px 400px;
+    padding: 50px;
+    color: $white;
+    border-radius: 10px;
+    a{
+        border-radius: 10px;
+        padding: 5px 20px;
+        background-color: $white;
+    }
+    .logo{
+        justify-content: flex-start;
+    }
+    h2{
+        display: inline-block;
+        font-weight: normal;
+    }
+    .r{
+        display: flex;
+        margin-bottom: 3vh;
+    }
+    .log{
+        @include flexbox(column)
+    }
+    input[type='email'],input[type='password']{
+        border-radius: 10px;
+        padding: 2px;
+    }
+    .inputgrp{
+        margin-bottom: 20px;
+        @include flexbox(column);
+    }
+    input[type="submit"]{
+        margin: 0;
+        width: 141px;
+        padding: 5px;
+        background-color: $gold;
+        color: $white;
+        border-radius: 10px;
+    }
+    input::placeholder{
+        background-color: $white;
+        color: $grey;
+    }
+    .btn{
+        display: flex;
+        justify-content: flex-end;
+    }
 }
 // admin side
 .sidebar{
@@ -41,17 +123,17 @@ body{
         margin-bottom: 20px;
         padding: 10px;
         a{
-            color: white;
+            color: $white;
         }
     }
     .menu a.activate{
-        background-color: #E2A03D
+        border-left: $gold solid 3px;
     }
     .menu{
         @include flexbox(column);
         a{
-            margin: 10px 5px 10px 25px;
-            color: white;
+            padding: 10px 5px 10px 25px;
+            color: $white;
         }
     }
 }
@@ -61,13 +143,13 @@ body{
 }
 .for{
     position: relative;
-    background-color: grey;
+    background-color: $grey;
     padding: 50px;
     width: 100%;
     a{
         float: left;
-        color: white;
-        border: 1px solid white;
+        color: $white;
+        border: 1px solid $white;
         padding: 0.5vh 1vh;
         font-size: 12px;
         margin: 30px 3px;
@@ -78,6 +160,11 @@ body{
     }
     section .scroll{
         @include flexbox(column);
+        a:hover{
+            background-color: $white;
+            color: $primary;
+            border-color: $primary;
+        }
     }
     .box{
         margin: 2vh 5vh;
@@ -86,8 +173,8 @@ body{
 }
 .file{
     float: left;
-    color: white;
-    border: 1px solid white;
+    color: $white;
+    border: 1px solid $white;
     padding: 0.5vh 1vh;
     font-size: 20px;
     margin: 30px 0px;
@@ -99,8 +186,8 @@ body{
 }
 input[type="text"], ::placeholder{
     border: none;
-    background-color: grey;
-    color: white;
+    background-color: $grey;
+    color: $white;
     outline: none;
     cursor: pointer;
     
@@ -114,27 +201,28 @@ input[type="submit"]{
     margin-left: 80%;
 }
 .co{
-    @include flexbox();
+    display: flex;
     padding: 20px;
     max-width: 200vh;
     input{
         display: inline-block;
         justify-content: center;
         align-items: center;
-        margin-right: 20%;
+        margin-right: 11%;
+        min-width: 200px;
     }
-    input[type="text"]:nth-child(1), input[type="text"]:nth-child(2){
+    input[type="text"]:nth-child(1) {
         width: 100px;
     }
     textarea{
         width: 400px;
         height: 150px;
-        background-color: grey;
+        background-color: $grey;
         cursor: pointer;
         border: none;
         outline: none;
-        border-bottom: white 2px solid;
-        color: white;
+        border-bottom: $white 2px solid;
+        color: $white;
         font-size: 20px;
     }
 }
@@ -145,7 +233,7 @@ input[type="submit"]{
     @include flexbox();
     max-width: 60vh;
     font-size: 20px;
-    color: white;
+    color: $white;
     .infle{
         @include flexbox(column);
         input{
@@ -156,7 +244,7 @@ input[type="submit"]{
             border-bottom: $primary 2px solid;
         }
         span label:nth-child(2){
-            color: #E2A03D;
+            color: $gold;
             font-size: 15px;
             position: relative;
             top: 10px;
@@ -167,10 +255,68 @@ input[type="submit"]{
     overflow-x: auto;
 }
 .min{
+    background-color: $grey;
+    padding: 20px;
+    a{
+        margin: 50px;
+        color: $white;
+        border: 1px solid $white;
+        padding: 0.5vh 3vh;
+    }
+    a:hover{
+        background-color: $white;
+        color: $primary;
+        border-color: $primary;
+    }
     .layout, .layout2, .layout3, .layout4{
         background-color: transparent;
+        padding: 5px 50px;
         a{
             margin-right: 20px;
+        }
+        img{
+            width: 80vh;
+            height: 100%;
+        }
+        .tex{
+            height: 100%;
+            top: -44.5vh;
+        }
+    }
+    .boxevent{
+        height: 44vh;
+        width: fit-content;
+        margin: 5px;
+    }
+    .layout3{
+        padding: 5px 30px;
+        grid-template-rows: 52vh auto;
+        .boxevent:nth-child(1){
+            img{
+                width: 162vh;
+                height: 50vh;
+            }
+            .tex{
+                padding-top: 25vh;
+                top: -50.5vh;
+                height: 50vh;
+            }
+        }
+    }
+    .layout2, .layout{
+        grid-template-rows: auto auto;
+        padding: 0 30px;
+        .boxevent:nth-child(1),.boxevent:nth-child(2){
+            height: 50vh;
+            img{
+                width: 158vh;
+                height: 50vh;
+            }
+            .tex{
+                padding-top: 25vh;
+                top: -50.5vh;
+                height: 50vh;
+            }
         }
     }
 }
@@ -180,15 +326,19 @@ nav{
     top: 0;
     left: 0;
     z-index: 10000;
+    background-color: $primary;
+    padding: 1vh 10vh;
+    animation-name: top;
+    animation-duration: 2s;
     a{
         padding: 1vh 2vh;
         margin: 0 10px;
-        color: white;
+        color: $white;
         border-radius: 20px;
     }
     a:hover{
         color: $primary;
-        background-color: white;
+        background-color: $white;
     }
 }
 .logo{
@@ -197,16 +347,23 @@ nav{
 }
 .logo::before{
     content: "";
-    background-image: url(../img/logo.png);
+    background-image: url(assets/img/logo.png);
     background-size: 50px;
     display: block;
     width: 50px;
     height: 50px;
 }
+// .logo::before{
+//     content: "";
+//     background-image: url(../img/logo.png);
+//     background-size: 50px;
+//     display: block;
+//     width: 50px;
+//     height: 50px;  ---use this when use link:css
+// }
 .wrap{
     @include flexbox();
-    background-color: $primary;
-    padding: 1vh 10vh;
+
     .lef{
         @include flexbox();
         align-items: center;
@@ -229,17 +386,37 @@ h6{
     background-color: $primary;
     height: 80vh;
     .txt{
-        background-color: white;
+        background-color: $white;
         width: fit-content;
         padding: 1vh 2vh;
     }
     h6{
-        color: white;
+        color: $white;
         margin: 30px 0 0 30px;
+        max-height: 8vh;
+        overflow: hidden;
     }
     .sidetxt{
         max-width: 600px;
     }
+}
+#iii{
+    position: absolute;
+    left: -400px;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: $white 2px;
+    width: max-content;
+    font-size: 100px;
+}
+#eee{
+    -webkit-text-stroke: $white 2px;
+    color: transparent;
+    position: absolute;
+    right: -1000px;
+    width: max-content;
+    font-size: 100px;
+    text-transform: uppercase;
 }
 .fir{
     position: relative;
@@ -253,6 +430,8 @@ h6{
         position: absolute;
         left: -20vh;
         top: 10vh;
+        animation-name: left;
+        animation-duration: 2s;
         -webkit-transform: scaleX(-1);
         transform: scaleX(-1);
     }
@@ -263,7 +442,7 @@ h6{
         float: right;
         text-align: right;
         h6{
-            color: white;
+            color: $white;
             margin: 30px 30px 0 0 ;
         }
     }
@@ -278,7 +457,9 @@ h6{
         position: relative;
         right: -40%;
         top: -18vh;
-        z-index: 100000;
+        z-index: 100;
+        animation-name: right;
+        animation-duration: 2s;
     }
     margin: 5vh 0 10vh 15vh;
     border-bottom-left-radius: 10px;
@@ -287,7 +468,7 @@ h6{
 .sli{
     background-color: $primary;
     .whi{
-        background-color: white;
+        background-color: $white;
         margin: 0 auto;
         padding: 10px;
         width: fit-content;
@@ -297,6 +478,7 @@ h6{
 }
 .boxevent{
     width: fit-content;
+    height: 55vh;
     img{
         width: 88vh;
         height: 52vh;
@@ -308,9 +490,10 @@ h6{
         top: -52.5vh;
         bottom: 0;
         padding: 20.5vh 3vh;
-        color: white;
+        color: $white;
         overflow: hidden;
         transition: 0.3s;
+        height: 100%;
         h6{
             margin-bottom: 10px;
             max-height: 70px;
@@ -319,8 +502,8 @@ h6{
         a{
             display: none;
             float: right;
-            color: white;
-            border: 1px solid white;
+            color: $white;
+            border: 1px solid $white;
             padding: 0.5vh 3vh;
         }
     }
@@ -331,7 +514,7 @@ h6{
         display: inline-block;
     }
     a:hover{
-        background-color: white;
+        background-color: $white;
         color: $primary;
         border-color: $primary;
     }
@@ -345,8 +528,8 @@ main{
     grid-template-areas: 
     "box1 box3"
     "box2 box4";
-    grid-template-columns: 90vh 90vh;
-    grid-template-rows: 55vh 55vh;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
     padding: 50px;
     background-color: $primary;
 }
@@ -355,8 +538,8 @@ main{
     grid-template-areas: 
     "box1 box1"
     "box2 box3";
-    grid-template-columns: 90vh 90vh;
-    grid-template-rows: 82vh 55vh;
+    grid-template-columns: auto auto;
+    grid-template-rows: 83vh auto;
     padding: 50px;
     background-color: $primary;
     .boxevent:nth-child(1){
@@ -376,8 +559,8 @@ main{
     grid-template-areas: 
     "box1"
     "box2";
-    grid-template-columns: 90vh;
-    grid-template-rows: 82vh 82vh;
+    grid-template-columns: auto;
+    grid-template-rows: 83vh 100vh;
     padding: 50px;
     background-color: $primary;
     .boxevent{
@@ -431,8 +614,8 @@ main{
     background-color: $primary;
 }
 .box{
-    background-color: #424242;
-    color: white;
+    background-color: $black_grey;
+    color: $white;
     width: fit-content;
     display: flex;
     border-radius: 10px;
@@ -447,20 +630,20 @@ main{
         }
         a{
             float: left;
-            color: white;
-            border: 1px solid white;
+            color: $white;
+            border: 1px solid $white;
             padding: 0.5vh 1vh;
             font-size: 12px;
             margin-top: 30px;
         }
         a:hover{
-            background-color: white;
+            background-color: $white;
             color: $primary;
         }
     }
     .libo{
         width: 38vh;
-        background-color: grey;
+        background-color: $grey;
         border-radius: 10px;
         img{
             width: 400px;
@@ -473,9 +656,9 @@ main{
 .wrf{
     background-color: $primary;
     padding: 20px 50px;
-    color: white;
+    color: $white;
     a{
-        color: white;
+        color: $white;
         font-weight: lighter;
     }
     .linet{
@@ -483,7 +666,7 @@ main{
         margin-bottom: 30px;
     }
     .linet:nth-child(3){
-        border-bottom: white solid 1px;
+        border-bottom: $white solid 1px;
         padding-bottom: 30px;
     }
     .linet a{
@@ -497,8 +680,8 @@ main{
 .dp{
     a{
         float: left;
-        color: #E2A03D;
-        border: 1px solid white;
+        color: $gold;
+        border: 1px solid $white;
         padding: 1vh 3vh;
         font-size: 11px;
     }
@@ -507,8 +690,10 @@ main{
     }
     .con{
         margin: 150px 30px;
+        animation-name: leftprd;
+        animation-duration: 2s;
         .txt{
-            background-color: white;
+            background-color: $white;
             width: fit-content;
             padding: 1vh 2vh;
             border-radius: 5px;
@@ -516,12 +701,14 @@ main{
         .div{
             margin: 20px 70px;
             max-width: 600px;
-            color: white;
+            color: $white;
             h6{
-                border-bottom: white solid 1px;
+                border-bottom: $white solid 1px;
                 margin-bottom: 20px;
                 padding-bottom: 20px;
                 max-width: 160vh;
+                max-height: 20vh;
+                overflow: auto;
             }
             h2{
                 font-weight: lighter;
@@ -536,7 +723,7 @@ main{
                 font-weight: lighter;
             }
             span{
-                color: #E2A03D;
+                color: $gold;
             }
         }
     }
@@ -547,4 +734,40 @@ main{
     position: absolute;
     top: 5vh;
     right: -48vh;
+    animation-name: right;
+    animation-duration: 2s;
+}
+.new{
+    height: fit-content;
+    padding: 20px;
+    a{
+        color: $gold;
+        border: 1px solid $white;
+        padding: 1vh 3vh;
+        font-size: 11px;
+        margin: 30px 0;
+    }
+    img{
+        width: 100%;
+        margin: 30px 0;
+    }
+    .div{
+        color: $white;
+        width: 70%;
+        max-height: 50vh;
+        margin: 0 auto;
+        font-size: 20px;
+        margin-top: 50px;
+        font-weight: lighter;
+        overflow: auto;
+        h6{
+            border-top: $white 1px solid;
+            padding: 50px;
+        }
+        h3{
+            width: fit-content;
+            margin: 50px auto;
+            max-width: 260px;
+        }
+    }
 }

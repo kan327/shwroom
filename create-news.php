@@ -21,45 +21,16 @@
         <div class="for">
             <form action="" enctype="multipart/form-data">
                 <div class="cont">
-                    <label class="file" for="logo">
-                        Logo Image
-                        <input type="file" name="lgo_img" id="">
-                    </label>
                     <label class="file" for="carimg">
                         Image
                         <input type="file" name="img">
-
                     </label>
-                <div class="co">
-                    <input type="text" placeholder="$XXX.XX" name="harga" id="">  
+                <div class="co"> 
                     <input type="text" placeholder="Title..." name="judul">                  
                     <textarea placeholder="input here..." name="deskripsi" id=""></textarea>
                 </div>
                 <!-- button -->
-                <input type="submit" name="kirim">
-                <div class="fle">
-                    <div class="infle">
-                        <label for="power">Power</label>
-                        <span>
-                            <input type="text" placeholder="XXX" name="power" id="">
-                            <label for="power">Hp</label>                       
-                        </span>
-                    </div>
-                    <div class="infle">
-                        <label for="power">Top Speed</label>
-                        <span>
-                            <input type="text" placeholder="XXX" name="top_speed" id="">
-                            <label for="power">Mph</label>                       
-                        </span>
-                    </div>
-                    <div class="infle">
-                        <label for="power">Max Torque</label>
-                        <span>
-                            <input type="text" placeholder="XXX" name="torquee" id="">
-                            <label for="power">lb-ft</label>                       
-                        </span>
-                    </div>
-                </div>                  
+                <input type="submit" name="kirim">                 
                 </div>
             </form>
 
